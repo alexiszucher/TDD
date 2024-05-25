@@ -1,5 +1,6 @@
 package service;
 
+import org.example.UseCaseResponse;
 import org.example.model.Book;
 import org.example.service.AddBookService;
 import org.junit.jupiter.api.Assertions;
@@ -14,8 +15,8 @@ public class AddBookServiceTest {
 
     @Test
     public void givenGoodDataThenBookIsAdded() {
-        boolean response = addBookService.add(BOOK);
-        Assertions.assertTrue(response);
+        UseCaseResponse<Long> response = addBookService.add(BOOK);
+        Assertions.assertTrue(response.isSuccess());
     }
 
 }

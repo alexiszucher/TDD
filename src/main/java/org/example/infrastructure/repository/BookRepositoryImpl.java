@@ -1,4 +1,4 @@
-package fake;
+package org.example.infrastructure.repository;
 
 import org.example.UseCaseResponse;
 import org.example.model.Book;
@@ -6,7 +6,7 @@ import org.example.repository.BookRepository;
 
 import java.util.*;
 
-public class BookRepositoryFake implements BookRepository {
+public class BookRepositoryImpl implements BookRepository {
 
     private Long id = 0L;
     private Map<Long, Book> books = new HashMap<>();
@@ -16,7 +16,7 @@ public class BookRepositoryFake implements BookRepository {
         id++;
         book.setId(id);
         books.put(book.getId(), book);
-        return UseCaseResponse.createSuccessResponse(id);
+        return UseCaseResponse.createSuccessResponse(book.getId());
     }
 
     @Override
@@ -29,4 +29,5 @@ public class BookRepositoryFake implements BookRepository {
         books.replace(book.getId(), book);
         return UseCaseResponse.createSuccessResponse(book);
     }
+
 }
