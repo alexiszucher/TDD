@@ -1,19 +1,19 @@
-package service;
+package application;
 
 import fake.BookRepositoryFake;
 import org.example.UseCaseResponse;
-import org.example.model.Book;
-import org.example.repository.BookRepository;
-import org.example.service.UpdateBookService;
+import org.example.domain.model.Book;
+import org.example.domain.repository.BookRepository;
+import org.example.application.UpdateBookUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
-public class UpdateBookServiceTest {
+public class UpdateBookUseCaseTest {
 
     private BookRepository bookRepository = new BookRepositoryFake();
-    private UpdateBookService updateBookService = new UpdateBookService(bookRepository);
+    private UpdateBookUseCase updateBookUseCase = new UpdateBookUseCase(bookRepository);
 
     private Book BOOK = new Book("Livre", "Auteur");
     private static String UPDATE_AUTHOR = "Auteur2";
@@ -27,7 +27,7 @@ public class UpdateBookServiceTest {
         Book bookToUpdate = bookToUpdateOpt.get();
         bookToUpdate.setAuthor(UPDATE_AUTHOR);
         bookToUpdate.setName(UPDATE_NAME);
-        UseCaseResponse<Book> responseUpdate = updateBookService.update(BOOK);
+        UseCaseResponse<Book> responseUpdate = updateBookUseCase.update(BOOK);
         Assertions.assertTrue(responseUpdate.isSuccess());
         Assertions.assertEquals(responseUpdate.getBody().getAuthor(), UPDATE_AUTHOR);
         Assertions.assertEquals(responseUpdate.getBody().getName(), UPDATE_NAME);

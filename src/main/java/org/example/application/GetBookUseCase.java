@@ -1,15 +1,15 @@
-package org.example.service;
+package org.example.application;
 
-import org.example.model.Book;
-import org.example.repository.BookRepository;
+import org.example.domain.model.Book;
+import org.example.domain.repository.BookRepository;
 
 import java.util.Optional;
 
-public class GetBookService {
+public class GetBookUseCase {
 
     private BookRepository bookRepository;
 
-    public GetBookService(BookRepository bookRepository) {
+    public GetBookUseCase(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 

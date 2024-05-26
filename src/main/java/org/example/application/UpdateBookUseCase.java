@@ -1,16 +1,14 @@
-package org.example.service;
+package org.example.application;
 
 import org.example.UseCaseResponse;
-import org.example.model.Book;
-import org.example.repository.BookRepository;
+import org.example.domain.model.Book;
+import org.example.domain.repository.BookRepository;
 
-import java.util.Optional;
-
-public class UpdateBookService {
+public class UpdateBookUseCase {
 
     private BookRepository bookRepository;
 
-    public UpdateBookService(BookRepository bookRepository) {
+    public UpdateBookUseCase(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 

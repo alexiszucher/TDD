@@ -1,21 +1,21 @@
-package service;
+package application;
 
 import org.example.UseCaseResponse;
-import org.example.model.Book;
-import org.example.service.AddBookService;
+import org.example.domain.model.Book;
+import org.example.application.AddBookUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import fake.BookRepositoryFake;
 
-public class AddBookServiceTest {
+public class AddBookUseCaseTest {
 
-    private AddBookService addBookService = new AddBookService(new BookRepositoryFake());
+    private AddBookUseCase addBookUseCase = new AddBookUseCase(new BookRepositoryFake());
 
     private static Book BOOK = new Book("Livre", "Auteur");
 
     @Test
     public void givenGoodDataThenBookIsAdded() {
-        UseCaseResponse<Long> response = addBookService.add(BOOK);
+        UseCaseResponse<Long> response = addBookUseCase.add(BOOK);
         Assertions.assertTrue(response.isSuccess());
     }
 

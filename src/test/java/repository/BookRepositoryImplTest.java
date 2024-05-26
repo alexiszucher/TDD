@@ -1,8 +1,8 @@
 package repository;
 
 import org.example.UseCaseResponse;
-import org.example.model.Book;
-import org.example.repository.BookRepository;
+import org.example.domain.model.Book;
+import org.example.domain.repository.BookRepository;
 import org.example.infrastructure.repository.BookRepositoryImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

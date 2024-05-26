@@ -1,6 +1,6 @@
 package model;
 
-import org.example.model.Book;
+import org.example.domain.model.Book;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

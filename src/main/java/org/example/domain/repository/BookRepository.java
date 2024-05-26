@@ -1,7 +1,7 @@
-package org.example.repository;
+package org.example.domain.repository;
 
 import org.example.UseCaseResponse;
-import org.example.model.Book;
+import org.example.domain.model.Book;
 
 import java.util.Optional;
 

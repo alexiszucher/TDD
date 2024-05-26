@@ -1,8 +1,8 @@
 package org.example.infrastructure.repository;
 
 import org.example.UseCaseResponse;
-import org.example.model.Book;
-import org.example.repository.BookRepository;
+import org.example.domain.model.Book;
+import org.example.domain.repository.BookRepository;
 
 import java.util.*;
 
